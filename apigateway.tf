@@ -72,7 +72,7 @@ resource "aws_lambda_permission" "apigw_lambda" {
     principal = "apigateway.amazonaws.com"
     ##The /*/*/* part allow invocation from any stage, method and resource path
     ## within API Gateway REST API.
-    soursource_arn = "${aws_api_gateway_rest_api.api.execution_arn}/*/*/*" 
+    source_arn = "${aws_api_gateway_rest_api.api.execution_arn}/*/*/*" 
     depends_on = ["aws_lambda_function.lambda_tf", "aws_api_gateway_rest_api.api"]
   
 }
