@@ -69,7 +69,7 @@ resource "aws_lambda_permission" "apigw_lambda" {
     statement_id = "AllowExecutionFromAPIGateway"
     action = "lambda:InvokeFunction"
     function_name = "${aws_lambda_function.lambda_tf.arn}"
-    principrincipal = "apigateway.amazonaws.com"
+    principal = "apigateway.amazonaws.com"
     ##The /*/*/* part allow invocation from any stage, method and resource path
     ## within API Gateway REST API.
     soursource_arn = "${aws_api_gateway_rest_api.api.execution_arn}/*/*/*" 
