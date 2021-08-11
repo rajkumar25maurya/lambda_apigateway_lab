@@ -5,7 +5,7 @@ resource "aws_lambda_function" "lambda_tf" {
     handler             = "lambda.lambda_handler"
     runtime             = "python3.7"
 
-    source_code_hash = "${filebase4sha256("lambda.zip")}"
+    source_code_hash = "${filebase64sha256("lambda.zip")}"
     depends_on       = ["aws_iam_role.iam_for_lambda"]
       
     } 
